@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  app:
+    image: python:3.11-slim
+    container_name: vertice_app
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./app:/app
+      - ./.agents:/app/.agents
+      - ./templates:/app/templates
+      - ./_memoria:/app/_memoria
+      - ./identidade:/app/identidade
+      - ./saidas:/app/saidas
+    working_dir: /app
+    environment:
+      - PYTHONUNBUFFERED=1
+      - RAG_SERVER_URL=http://host.docker.internal:8799
+    command: python app_backend.py
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  code-server:
+    image: codercom/code-server:latest
+    container_name: vertice_workspace
+    ports:
+      - "8443:8443"
+    volumes:
+      - .:/home/coder/project
+    environment:
+      - PASSWORD=verticeos
+    command: --auth password --port 8443 /home/coder/project
+
+  db:
+    image: postgres:15-alpine
+    container_name: vertice_crm_db
+    environment:
+      - POSTGRES_USER=twenty
+      - POSTGRES_PASSWORD=twenty
+      - POSTGRES_DB=twenty
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  twenty:
+    image: twentyhq/twenty:latest
+    container_name: vertice_crm
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - SIGNING_KEY=secret_signing_key_vertice_os_crm_2026_key
+      - ENCRYPTION_KEY=secret_encryption_key_vertice_os_crm_2026_key
+      - PG_DATABASE_URL=postgresql://twenty:twenty@db:5432/twenty
+      - SERVER_URL=http://localhost:3000
+    depends_on:
+      - db
+
+volumes:
+  pgdata:

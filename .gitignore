@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+.env
+
+# IDEs
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.log
+
+# Bancos de dados locais / caches de uso
+app/crm_database.json
+app/instagram_cache.json
+app/ideas_database.json
+
+# Customizações locais do cliente
+identidade/messaging/*
+!identidade/messaging/.gitkeep
+identidade/logo.png
+identidade/logo.svg
+
+# Pastas de trabalho dinâmicas (geradas no uso)
+clientes/
+saidas/
