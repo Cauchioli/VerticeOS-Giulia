@@ -3,10 +3,12 @@
 ## 1. Ferramentas e Custos Mensais (Tecnologia)
 * **ChatGPT Plus:** R$ 120,00/mês
 * **JusBrasil:** R$ 130,00/mês
-* **ASP (Planilhas):** R$ 65,60/mês *(Recomendado cancelamento para migração para Google Planilhas gratuito)*
-* **CapCut:** Uso gratuito (edição de vídeo corporativo)
-* **ZapSign:** Conta gratuita para assinatura eletrônica de contratos remotos
-* **Total em Tecnologia:** ~R$ 316,00/mês
+* **ASP (Planilhas):** R$ 65,60/mês *(Pendente de cancelamento em 31/07)*
+* **CapCut:** Assinatura cancelada ✅ (uso de Edits / ferramentas integradas)
+* **Google One / Gemini Advanced (2TB):** R$ 10,00 nos primeiros 3 meses, depois R$ 97,00/mês (Uso do Deep Research, NotebookLM ilimitado e armazenamento do Drive)
+* **ZapSign:** Conta gratuita para assinaturas digitais remotas
+* **Total em Tecnologia:** ~R$ 362,60/mês (após período promocional do Google One e cancelamento do ASP)
+
 
 ---
 
